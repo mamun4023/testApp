@@ -7,6 +7,14 @@ import {
 } from '@stripe/react-stripe-js'
 import { useState } from 'react'
 
+
+const cardStyle = {
+  border : "1px solid gray",
+  padding : "10px",
+  borderRadius : "10px",
+  margin : "10px"
+}
+
 function App() {
   
   const stripe = useState();
@@ -16,13 +24,16 @@ function App() {
   return (
     <>
       <div>
-             <div>
-                <CardNumberElement  />
+             <div style={cardStyle}>
+                <CardNumberElement  options={{
+                   showIcon : true
+                   
+                }} />
              </div>
-             <div>
+             <div style={cardStyle}>
                 <CardExpiryElement />
              </div>
-             <div>
+             <div style={cardStyle}>
                 <CardCvcElement />
              </div>
       </div>
